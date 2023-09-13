@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="styles.css">
+  <head>
+  </head>
+
+      <body>
+        
+         <h1 id="title">QuisLectusCamp Survey Form</h1>
+     <p id="description">Thank you for taking the time to help us improve the platform</p>
+     <br>
+
+        <form id="survey-form">
+          <fieldset>
+          <label id="name-label" for="name">Name<input required id="name" type="text" placeholder="Enter your name"></label>
+          <label id="email-label" for="email">Email<input required id="email" type="email" placeholder="Enter your email"></label>
+          <label id="number-label" for="number">Age <span>(optional)</span><input required id="number" type="number" min="1" max="99" placeholder="Age" value="Age"></label>
+          </fieldset>
+
+          <fieldset>
+            <label for="dropdown">Which option best describes your current role?
+              <select id="dropdown" name="select" >
+                <option value="" disabled selected="selected">Select your current role</option>
+                <option value="option1">Student</option>
+                <option value="option2">Full time employment</option>
+                <option value="option3">Prefer not to say</option>
+                <option value="option4">Other</option>
+              </select> 
+            </label>        
+          </fieldset>
+<br>
+<fieldset id="recommendations">
+  <legend>Would you recommend QuisLectusCamp to a friend?</legend>
+  <label for="definitely">
+    <input id="definitely" type="radio" name="radio" value="first">
+    Definitely
+  </label>
+
+  <label for="maybe">
+    <input id="maybe" type="radio" name="radio" value="second">
+    Maybe
+  </label>
+
+  <label for="unsure">
+    <input id="unsure" type="radio" name="radio" value="third">
+    Not sure
+  </label>
+</fieldset>
+
+<fieldset id="favourites">
+  <legend>What is your favourite feature of QuisLectusCamp?</legend>
+  <label for="fe">
+    <input id="fe" type="checkbox" name="feature" value="Front-end Projects" class="inline"> Front-end Projects
+  </label>
+  <label for="be">
+    <input id="be" type="checkbox" name="feature" value="Back-end Projects" class="inline"> Back-end Projects
+  </label>
+  <label for="dv">
+    <input id="dv" type="checkbox" name="feature" value="Data Visualisation" class="inline"> Data Visualisation
+  </label>
+  <label for="ch">
+    <input id="ch" type="checkbox" name="feature" value="Challenges" class="inline"> Challenges
+  </label>
+  <label for="osc">
+    <input id="osc" type="checkbox" name="feature" value="Open Source Community" class="inline"> Open Source Community
+  </label>
+  <label for="gitter">
+    <input id="gitter" type="checkbox" name="feature" value="Gitter help rooms" class="inline"> Gitter help rooms
+  </label>
+  <label for="forum">
+    <input id="forum" type="checkbox" name="feature" value="Forum" class="inline"> Forum
+  </label>
+  <label for="ac">
+    <input id="ac" type="checkbox" name="feature" value="Additional Courses" class="inline"> Additional Courses
+  </label>
+</fieldset>
+
+<fieldset>
+  <legend>Any comments or suggestions?</legend>
+  <label for="comments">
+    <textarea id="comments" placeholder="Enter your comments here..."></textarea>
+  </label>
+</fieldset>
+
+<fieldset>
+  <input id="submit" type="submit" value="Submit">
+</fieldset>
+
+</form>
+</body>
+</html>
