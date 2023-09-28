@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="./styles.css" rel="stylesheet">
+  <title>Technical Documentation
+    </title>
+</head>
+
+<body>
+     
+  <main id="main-doc">
+
+    <section id="Accessibility_overview" class="main-section">
+      <header>Accessibility overview</header>
+
+      <p>When someone describes a site as "accessible", they mean that any user can use all its features and content, regardless of how the user accesses the web — even and especially users with physical or mental impairments.</p>
+      <ul>
+        <li>Sites should be accessible to keyboard, mouse, and touch screen users, and any other way users access the web, including screen readers and voice assistants like Alexa and Google Home.</li>
+        <li>Applications should be understandable and usable by people regardless of auditory, visual, physical, or cognitive abilities.</li>
+        <li>Sites should also not cause harm: web features like motion can cause migraines or epileptic seizures.</li>
+      </ul>
+
+      <section id="HTML:_A_good_basis_for_accessibility" class="main-section">
+         <header>HTML: A good basis for accessibility
+            </header>
+
+          <p>A great deal of web content can be made accessible just by making sure the correct Hypertext Markup Language elements are used for the correct purpose at all times. This article looks in detail at how HTML can be used to ensure maximum accessibility.
+              </p>
+
+      <section id="HTML_and_accessibility" class="main-section">
+              <header>HTML and accessibility
+                </header>
+
+          <p>As you learn more about HTML — read more resources, look at more examples, etc. — you'll keep seeing a common theme: the importance of using semantic HTML (sometimes called POSH, or Plain Old Semantic HTML). This means using the correct HTML elements for their intended purpose as much as possible.
+                  </p>
+
+          <p>You might wonder why this is so important. After all, you can use a combination of CSS and JavaScript to make just about any HTML element behave in whatever way you want. For example, a control button to play a video on your site could be marked up like this:
+
+          </p>
+            
+            <code>
+      &lt;div&gt;Play video&lt;/div&gt;
+            </code>
+            
+          <p>But as you'll see in greater detail later on, it makes sense to use the correct element for the job:</p>
+          <code>
+      &lt;button&gt;Play video&lt;/button&gt;
+          </code>
+                
+        </section>
+
+        <section id="Good_semantics" class="main-section">
+           <header>Good semantics
+                  </header>
+
+              <p>One of the best accessibility aids a screen reader user can have is an excellent content structure with headings, paragraphs, lists, etc. An excellent semantic example might look something like the following:</p>
+
+              <code>
+  
+      &lt;h1>My heading&lt;/h1>
+
+      &lt;p>This is the first section of my document.&lt;/p>
+      &lt;p>I'll add another paragraph here too.&lt;/p>
+      &lt;ol>
+        &lt;li>Here is&lt;/li>
+        &lt;li>a list for&lt;/li>
+        &lt;li>you to read&lt;/li>
+      &lt;/ol>
+
+      &lt;h2>My subheading&lt;/h2>
+
+      &lt;p>
+        This is the first subsection of my document.
+        I'd love people to be able to find this content!
+      &lt;/p>
+
+      &lt;h2>My 2nd subheading&lt;/h2>
+
+      &lt;p>
+        This is the second subsection of my content,
+        which I think is more interesting than the last one.
+      &lt;/p>
+        </code>
+
+
+      <p>If you try navigating through this, you'll see that this is pretty easy to navigate:
+      </p>
+        <ol>
+          <li>The screen reader reads each header out as you progress through the content, notifying you what a heading is, what is a paragraph, etc.</li>
+          <li>It stops after each element, letting you go at whatever pace is comfortable for you.</li>
+          <li>You can jump to the next/previous heading in many screen readers.</li>
+          <li>You can also bring up a list of all headings in many screen readers, allowing you to use them as a handy table of contents to find specific content.</li>
+        </ol>
+
+      <p>The language you use can also affect accessibility. In general, you should use clear language that is not overly complex and doesn't use unnecessary jargon or slang terms. This not only benefits people with cognitive or other disabilities; it benefits readers for whom the text is not written in their first language, younger people…, everyone, in fact! Apart from this, you should try to avoid using language and characters that don't get read out clearly by the screen reader. For example:
+        </p>
+
+        <ul>
+          <li>Don't use dashes if you can avoid it. Instead of writing 5–7, write 5 to 7.</li>
+          <li>Expand abbreviations — instead of writing Jan, write January.</li>
+           <li>Expand acronyms, at least once or twice, then use the &lt;abbr> tag to describe them.
+      </li>
+        </ul>
+      <p>By UI controls, we mean the main parts of web documents that users interact with — most commonly buttons, links, and form controls. In this section, we'll look at the basic accessibility concerns to be aware of when creating such controls. Later articles on WAI-ARIA and multimedia will look at other aspects of UI accessibility.</p>
+
+      <p>UI control text labels are very useful to all users, but getting them right is particularly important to users with disabilities.</p>
+
+      <p>You should make sure that your button and link text labels are understandable and distinctive. Don't just use "Click here" for your labels, as screen reader users sometimes get up a list of buttons and form controls. The following screenshot shows our controls being listed by VoiceOver on Mac.</p>
+
+      <p>Make sure your labels make sense out of context, read on their own, as well as in the context of the paragraph they are in. For example, the following shows an example of good link text:</p>
+
+        <code>
+      &lt;p>
+        Whales are really awesome creatures.
+        &lt;a href="whales.html">Find out more about whales&lt;/a>.
+      &lt;/p>
+        </code>
+
+      </section>
+
+      <section id="CSS_and_JavaScript_accessibility_best_practices" class="main-section">
+         <header>CSS and JavaScript accessibility best practices</header>
+
+          <p>CSS and JavaScript don't have the same immediate importance for accessibility as HTML, but they are still able to help or damage accessibility, depending on how they are used. To put it another way, it is important that you consider some best practice advice to make sure that your use of CSS and JavaScript doesn't ruin the accessibility of your documents.
+                  </p>
+      </section>
+
+      <section id="CSS" class="main-section">
+         <header>CSS
+                  </header>
+
+            <p>It is possible to use CSS to make any HTML element look like anything, but this doesn't mean that you should. Using correct semantics has a lot to do with user expectations — elements look and behave in certain ways, according to their functionality, and these common conventions are expected by users.</p>
+
+              <p>As an example, a screen reader user can't navigate a page via heading elements if the developer hasn't appropriately used heading elements to markup the content. By the same token, a heading loses its visual purpose if you style it so it doesn't look like a heading.</p>
+
+              <p>Bottom line, you can update the styling of a page feature to fit in your design, but don't change it so much that it no longer looks or behaves as expected. The following sections summarize the main HTML features to consider.</p>
+
+              <p>Headings, paragraphs, lists — the core text content of your page:</p>
+
+               <code>
+    &lt;h1>Heading&lt;/h1&gt;
+      &lt;p>Paragraph&lt;/p>
+        &lt;ul>
+          &lt;li>My list&lt;/li>
+          &lt;li>has two items.&lt;/li>
+        &lt;/ul>
+      </code>
+
+      <p>Some typical CSS might look like this:</p>
+        <code>
+    h1 {
+          font-size: 5rem;
+      }
+
+    p,
+      li {
+        line-height: 1.5;
+        font-size: 1.6rem;
+      }
+      </code>
+      <p>You should:</p>
+        <ul>
+          <li>Select sensible font sizes, line heights, letter spacing, etc. to make your text logical, legible, and comfortable to read.</li>
+          <li>Make sure your headings stand out from your body text, typically big and bold like the default styling. Your lists should look like lists.</li>
+          <li>Your text color should contrast well with your background color.</li>
+        </ul>
+
+      </section>
+
+      </section>
+
+      <section id="JavaScript" class="main-section">
+        <header>JavaScript</header>
+
+        <p>Modern JavaScript is a powerful language, and we can do so much with it these days, from simple content and UI updates to fully-fledged 2D and 3D games. There is no rule that says all content has to be 100% accessible to all people — you just need to do what you can, and make your apps as accessible as possible.</p>
+
+        <p>You should keep unobtrusive JavaScript in mind when creating your content. The idea of unobtrusive JavaScript is that it should be used wherever possible to enhance functionality, not build it in entirely — basic functions should ideally work without JavaScript, although it is appreciated that this is not always an option. But again, a large part of it is using built-in browser functionality where possible.</p>
+
+        <p>Good example uses of unobtrusive JavaScript include:</p>
+          <ul>
+            <li>Providing client-side form validation, which alerts users to problems with their form entries quickly, without having to wait for the server to check the data. If it isn't available, the form will still work, but validation might be slower.</li>
+            <li>Providing custom controls for HTML &lt;video>s that are accessible to keyboard-only users, along with a direct link to the video that can be used to access it if JavaScript is not available (the default &lt;video> browser controls aren't keyboard accessible in most browsers).</li>
+          </ul>
+
+
+        <p>We've made this form validation pretty accessible too. We've used &lt;label> elements to make sure the form labels are unambiguously linked to their inputs, so screen readers can read them out alongside:</p>
+
+        <code>
+      &lt;label for="name">Enter your name:&lt;/label&gt;
+      &lt;input type="text" name="name" id="name" /&gt;
+        </code>
+
+        <p>We only do the validation when the form is submitted — this is so that we don't update the UI too often and potentially confuse screen reader (and possibly other) users:</p>
+
+        <code>
+      form.onsubmit = validate;
+
+      function validate(e) {
+          errorList.innerHTML = "";
+      for (let i = 0; i &lt; formItems.length; i++) {
+            const testItem = formItems[i];
+      if (testItem.input.value === "") {
+              errorField.style.left = "360px";
+              createLink(testItem);
+            }
+          }
+
+          if (errorList.innerHTML !== "") {
+            e.preventDefault();
+          }
+        }
+        </code>
+
+        <p>Real form validation would be much more complex than this — you'd want to check that the entered name actually looks like a name, the entered age is actually a number and is realistic (e.g. nonnegative and less than 4 digits). Here we've just implemented a simple check that a value has been filled in to each input field (if (testItem.input.value === '')).</p>
+      </section>
+
+      <section id="Reference" class="main-section">
+        <header>Reference</header>
+        <ul>
+          <li>All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/CSS_and_JavaScript">MDN</a></li>
+        </ul>
+      </section>
+
+  </section>
+  </main>
+
+  <nav id="navbar">
+        <header>Accessibility</header>
+            <ul>
+              <li><a href="#Accessibility_overview" class="nav-link">Accessibility overview</a></li> 
+              <li><a href="#HTML:_A_good_basis_for_accessibility" class="nav-link">HTML: A good basis for accessibility</a></li>      
+              <li><a href="#HTML_and_accessibility" class="nav-link">HTML and accessibility</a></li>
+              <li><a href="#Good_semantics" class="nav-link">Good semantics</a></li>
+              <li><a href="#CSS_and_JavaScript_accessibility_best_practices" class="nav-link">CSS and JavaScript accessibility best practices</a></li>
+              <li><a href="#CSS" class="nav-link">CSS</a></li>
+              <li><a href="#JavaScript" class="nav-link">JavaScript</a></li>
+              <li><a href="#Reference" class="nav-link">Reference</a></li>
+            </ul>
+  </nav>
+    
+</body>
+</html>
